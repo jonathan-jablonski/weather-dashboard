@@ -10,6 +10,7 @@ $(document).ready(function(){
     var baseUrl = 'https://api.openweathermap.org/data/2.5/weather?';
     var baseUrl2 = 'https://api.openweathermap.org/data/2.5/forecast?';
     var iconBaseUrl = 'https://openweathermap.org/img/w/'
+    //Search button submission
     searchForm.submit(function(event) {
         event.preventDefault();
         console.log(event);
@@ -32,6 +33,7 @@ $(document).ready(function(){
         searchForFiveDayForecastWeather(city);
         searchValueInput.val('');
     });
+    // Function to fetch current weather for specified city
     function searchForCurrentCityWeather(city){
         currentWeatherContainer.html('');
         var fullUrl = baseUrl + "q=" + city + "&appid=" + apiKey + "&units=imperial";
@@ -65,6 +67,7 @@ $(document).ready(function(){
             currentWeatherContainer.append(windDiv);
         });
     }
+    // function to fetch five day forecast for said city
     function searchForFiveDayForecastWeather(city){
         fiveDayForecastContainer.html('');
         var forecastUrl = baseUrl2 + "q=" + city +"&appid=" + apiKey + "&units=imperial";
@@ -108,6 +111,7 @@ $(document).ready(function(){
             }
         });
     }
+    // fetching UV index for city at specific latitude and longitude
     function getUVIndex (lat, lon) {
         var finalUrl = uvIndexBaseUrl + 'lat=' + lat + '&lon=' + lon + '&exclude-hourly,daily&appid=' + apiKey;
         fetch (finalUrl).then(function(response){
@@ -122,6 +126,7 @@ $(document).ready(function(){
             currentWeatherContainer.append(uvIndexDiv);
         })
     }
+    // adding previous cities to local storage and displaying in a container
     function retrieveSearchHistory() {
         if (localStorage.getItem('searchHistory')) {
             searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
