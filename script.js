@@ -1,10 +1,9 @@
-// 3d595e9d67ebe1b8a8efd77081a0e230 API key
 $(document).ready(function(){
     var searchHistoryContainer = $('#past-searches');
     var searchForm = $('#search-form');
     var currentWeatherContainer = $('#current-weather');
     var fiveDayForecastContainer = $('#five-day-forecast');
-    var apiKey = '3d595e9d67ebe1b8a8efd77081a0e230';
+    var apiKey = '';
     var searchValueInput = $('#search-value')
     var searchHistory = [];
     var uvIndexBaseUrl = 'https://api.openweathermap.org/data/2.5/onecall?'
