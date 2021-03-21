@@ -1,0 +1,20 @@
+h1 {
+    color: aqua;
+}
+
+.past-search-term{
+    color: rgb(250, 250, 250);
+}
+
+.uv-index-number {
+    color: royalblue;
+}
+
+.container-fluid {
+    background:whitesmoke;
+    flex: auto;
+}
+
+.search-history {
+    flex: auto;
+}
